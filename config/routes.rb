@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "beers#index"
 
-  resources :beers
+  resources :beers do
+    resources :drinklists
+    resources :comments
+  end
+  
   resources :users do
     resources :beers
     resources :nights do
@@ -10,9 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :beers do
-    resources :drinklists
-    resources :comments
-  end
+  # resources :beers do
+  #   resources :drinklists
+  #   resources :comments
+  # end
 
   end

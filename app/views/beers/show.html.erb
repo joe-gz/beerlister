@@ -35,6 +35,25 @@
   </li>
 
   <li>
+    Comments:
+    <% @beer.comments.each do |comment| %>
+    <div>
+      Author: <%= comment.user.email %>
+    </div>
+    <div>
+      Comment: <%= comment.comment_text %>
+    </div>
+    <div>
+      <%= link_to "Delete Comment", beer_comment_path(@beer,comment), method: :delete%>
+    </div>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to "Add Comment", new_beer_comment_path(@beer)%>
+  </li>
+
+  <li>
     <%= link_to "Edit Beer", edit_beer_path(@beer)%>
     <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
   </li>

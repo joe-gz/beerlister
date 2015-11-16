@@ -10,7 +10,7 @@ Night.destroy_all
 Drinklist.destroy_all
 # Song.destroy_all
 
-Beer.create(name:"Loose Cannon",beer_type:"Ipa",brewery:"Heavy Seas", photo_url:"http://img1.cookinglight.timeinc.net/sites/default/files/styles/400xvariable/public/image/2012/11/1211-loose-cannon-m.jpg?itok=TYsL4Pr1",abv:"7.25")
+Beer.create(name:"Loose Cannon",beer_type:"Ipa",brewery:"Heavy Seas", photo_url:"http://www.workman.com/ecookbook-club/wp-content/uploads/2014/01/loose-cannon1.png",abv:"7.25")
 Beer.create(name:"Budweiser",beer_type:"Lager",brewery:"Anheuser-Busch", photo_url:"http://deerparkpub.com/wp-content/uploads/2014/07/Budweiser.jpg",abv:"5")
 
 # artist.songs.create(title:"Ordinary People", album:"Get Lifted", preview_url:"https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CIQBEMgpMABqFQoTCLv_q9Dhg8kCFUbSYwodmxoEig&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPIh07c_P4hc&usg=AFQjCNFPVs26MuwHRqRoq1cUb9SZbLKKdQ&sig2=jdEh70JGnFhJS8jfQM03fw&bvm=bv.106923889,d.dmo")
