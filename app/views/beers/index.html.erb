@@ -1,29 +1,33 @@
-<%= link_to "Add Beer", new_beer_path %>
+<div class = "index_nav">
+  <%= link_to "Add Beer", new_beer_path %>
 
-<% if current_user%>
-<%= link_to "My Beers", users_path %>
-<%= link_to "My Nights", user_nights_path(current_user) %>
-<% end%>
-
-<ul>
-  <% @beers.each do |beer| %>
-  <li class = "li_beer_name">
-    <%= beer.name %>
-  </li>
-
-  <li>
-    <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
-  </li>
-
-<!-- the below shows an edit option for beers ONLY for beers the current user creates -->
-  <li>
-    <% if current_user %>
-    <% if beer.user == current_user %>
-    <%= link_to "Edit Beer", edit_beer_path(beer)%>
-    <% end %>
-    <% else %>
-    <% end %>
-  </li>
-
+  <% if current_user%>
+  <%= link_to "My Beers", users_path %>
+  <%= link_to "My Nights", user_nights_path(current_user) %>
   <% end%>
-</ul>
+</div>
+
+<div class = "row">
+  <% @beers.each do |beer| %>
+
+  <div class = "col-sm-4">
+    <div class = "beer_selector">
+      <div class = "div_beer_name">
+        <%= beer.name %>
+        <!-- the below shows an edit option for beers ONLY for beers the current user creates -->
+        <% if current_user %>
+        <% if beer.user == current_user %>
+        <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer"%>
+        <% end %>
+        <% else %>
+        <% end %>
+      </div>
+
+      <div>
+        <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
+      </div>
+
+    </div>
+  </div>
+  <% end%>
+</div>

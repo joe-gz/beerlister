@@ -14,25 +14,51 @@
  *= require_self
  */
 
+ body {
+   background-image: url('beerbar.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
 .span_title {
   font-size: .5em;
+}
+
+.sign_in {
+  font-size: .5em;
+  float: right;
 }
 
 li {
   list-style-type: none;
 }
 
-.review_field {
-  height: 4em;
-}
-
 .beer_image {
-  height: 6em;
+  height: 10em;
   width: auto;
 }
 
-.li_beer_name {
+.div_beer_name {
   padding-top: 2%;
+  font-size: 1em;
+}
+
+.index_nav a {
+  color: white;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.edit_beer {
+  font-size: .75em;
+}
+
+.beer_selector {
+  background: white;
+  border-radius: 8em;
+  margin-top: 1em;
+  width: 75%;
+  margin-left: 15%;
 }
 
 a {
@@ -42,4 +68,38 @@ a {
 .show_beer_image {
   height: 10em;
   width: auto;
+}
+
+.container {
+  text-align: center;
+}
+
+.nav {
+  text-align: center;
+  background-color: rgba(0, 0, 0,0.5);
+}
+
+.title {
+  font-size: 2em;
+  margin: auto;
+}
+
+.span_title {
+  color: white;
+}
+
+.new_beer {
+  margin: 0 auto;
+  color: white;
+}
+
+.new_beer input {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  color: black;
+}
+
+.new_beer {
+  color: white;
 }
