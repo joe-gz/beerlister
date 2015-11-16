@@ -1,0 +1,8 @@
+<h2>My Nights</h2>
+
+<%= link_to "New Night", new_user_night_path%>
+
+
+<%@nights.each do |night| %>
+<%= link_to night.title, user_night_path(current_user,night) %>
+<%end %>

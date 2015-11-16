@@ -6,6 +6,8 @@ before_action :set_beer, only: [:show,:edit,:update,:destroy]
   end
 
   def show
+    @drinklist = Drinklist.new
+    @nights = Night.all
   end
 
   def new

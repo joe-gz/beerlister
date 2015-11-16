@@ -1,0 +1,7 @@
+<h2>New Night</h2>
+
+<%= form_for [current_user, @night] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<%end%>

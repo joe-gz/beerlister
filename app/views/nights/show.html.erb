@@ -1,0 +1,8 @@
+<%= @night.title %>
+<ul>
+  <% @night.drinklists.each do |drinklist|%>
+  <li><%= drinklist.beer.title %></li>
+  <li><%= image_drinklist(drinklist.beer.image)%></li>
+  <%= link_to "Remove Beer From Night", user_night_drinklist_path(current_user,@night,drinklist), method: :delete%>
+  <%end%>
+</ul>
