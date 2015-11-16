@@ -6,3 +6,5 @@
   <%= link_to "Remove Beer From Night", user_night_drinklist_path(current_user,@night,drinklist), method: :delete%>
   <%end%>
 </ul>
+
+<%= link_to "Delete Night", user_night_path(current_user,@night), method: :delete%>

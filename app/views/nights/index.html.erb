@@ -3,6 +3,6 @@
 <%= link_to "New Night", new_user_night_path%>
 
 
-<%@nights.each do |night| %>
+<% current_user.nights.each do |night| %>
 <%= link_to night.title, user_night_path(current_user,night) %>
 <%end %>

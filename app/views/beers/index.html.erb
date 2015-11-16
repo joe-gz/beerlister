@@ -16,8 +16,14 @@
     <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
   </li>
 
+<!-- the below shows an edit option for beers ONLY for beers the current user creates -->
   <li>
+    <% if current_user %>
+    <% if beer.user == current_user %>
     <%= link_to "Edit Beer", edit_beer_path(beer)%>
+    <% end %>
+    <% else %>
+    <% end %>
   </li>
 
   <% end%>

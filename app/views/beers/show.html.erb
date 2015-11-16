@@ -19,14 +19,20 @@
     <%= image_tag(@beer.photo_url, class: "show_beer_image")%>
   </li>
 
+  <% if current_user %>
   <%= form_for [@beer,@drinklist] do |f| %>
   <select name="night">
-       <%= @nights.each do |night|  %>
-       <option value="<%= night.title %>"><%= night.title %></option>
-       <%end%>
-     </select>
+    <%= current_user.nights.each do |night|  %>
+    <option value="<%= night.title %>"><%= night.title %></option>
+    <%end%>
+  </select>
   <%= f.submit "Add to a Night"%>
   <%end%>
+  <%end%>
+
+  <li>
+    Review: <%= @beer.review %>
+  </li>
 
   <li>
     <%= link_to "Edit Beer", edit_beer_path(@beer)%>

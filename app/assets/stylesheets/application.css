@@ -34,3 +34,7 @@ li {
 .li_beer_name {
   padding-top: 2%;
 }
+
+a {
+  text-decoration: none;
+}

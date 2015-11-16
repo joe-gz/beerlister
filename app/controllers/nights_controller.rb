@@ -15,7 +15,7 @@ class NightsController < ApplicationController
     end
 
     def create
-      @night = Night.create(night_params)
+      @night = current_user.nights.create(night_params)
       redirect_to user_nights_path
     end
 

@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
 
-before_action :set_beer, only: [:show,:edit,:update,:destroy]
+  before_action :set_beer, only: [:show,:edit,:update,:destroy]
   def index
     @beers = Beer.all
   end
@@ -20,6 +20,10 @@ before_action :set_beer, only: [:show,:edit,:update,:destroy]
   end
 
   def edit
+    if @beer.user == current_user
+    else
+      redirect_to root_path
+    end
   end
 
   def update
