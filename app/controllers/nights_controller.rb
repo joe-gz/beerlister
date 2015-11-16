@@ -35,7 +35,7 @@ class NightsController < ApplicationController
     private
 
     def night_params
-      params.require(:night).permit(:title)
+      params.require(:night).permit(:title,:description)
     end
 
     def set_night

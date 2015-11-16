@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :beers do
     resources :drinklists
+    resources :comments
   end
 
   end

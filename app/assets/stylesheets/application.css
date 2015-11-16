@@ -38,3 +38,8 @@ li {
 a {
   text-decoration: none;
 }
+
+.show_beer_image {
+  height: 10em;
+  width: auto;
+}

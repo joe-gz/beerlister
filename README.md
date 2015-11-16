@@ -25,3 +25,4 @@ Bonus:
 2) Figure out how to add in API data to allow users to select beers instead of entering in all of the information
 3) Include a Favorite model for user profiles
 4) Can users sign in with FB?
+5) Add map box - week 10 curriculum

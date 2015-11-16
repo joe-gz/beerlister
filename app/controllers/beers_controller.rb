@@ -22,7 +22,7 @@ class BeersController < ApplicationController
   def edit
     if @beer.user == current_user
     else
-      redirect_to root_path
+      redirect_to beers_path
     end
   end
 
@@ -39,7 +39,7 @@ class BeersController < ApplicationController
   private
 
   def beer_params
-    params.require(:beer).permit(:name,:photo_url,:abv)
+    params.require(:beer).permit(:name,:beer_type,:brewery,:photo_url,:abv,:review)
   end
 
   def set_beer
