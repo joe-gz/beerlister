@@ -1,0 +1,27 @@
+<ul>
+  <li>
+    <%= @beer.name %>
+  </li>
+
+  <li>
+    Type: <%= @beer.beer_type %>
+  </li>
+
+  <li>
+    Brewery: <%= @beer.brewery %>
+  </li>
+
+  <li>
+    ABV(%): <%= @beer.abv %>
+  </li>
+
+  <li>
+    <%= image_tag(@beer.photo_url, class: "show_beer_image")%>
+  </li>
+
+  <li>
+    <%= link_to "Edit Beer", edit_beer_path(@beer)%>
+    <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
+  </li>
+
+</ul>

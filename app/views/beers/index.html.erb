@@ -1,0 +1,24 @@
+
+<% if current_user%>
+<%= link_to "My Beers", user_path(current_user) %>
+<%= link_to "My Nights", user_nights_path(current_user) %>
+<% end%>
+
+<%= link_to "Add Beer", new_beer_path %>
+
+<ul>
+  <% @beers.each do |beer| %>
+  <li>
+    <%= beer.name %>
+  </li>
+
+  <li>
+    <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
+  </li>
+
+  <li>
+    <%= link_to "Edit Beer", edit_beer_path(beer)%>
+  </li>
+
+  <% end%>
+</ul>

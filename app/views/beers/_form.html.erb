@@ -1,0 +1,29 @@
+<%= form_for @beer do |f| %>
+<ul>
+  <li>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :brewery %>
+    <%= f.text_field :brewery %>
+
+    <%= f.label :beer_type %>
+    <%= f.text_field :beer_type %>
+
+    <%= f.label :photo_url %>
+    <%= f.text_field :photo_url %>
+
+    <%= f.label :abv %>
+    <%= f.text_field :abv %>
+  </li>
+
+  <li>
+    <%= f.label :review %>
+    <%= f.text_field :review, class:"review_field" %>
+  </li>
+
+  <li>
+    <%= f.submit %>
+  </li>
+</ul>
+<%end%>
