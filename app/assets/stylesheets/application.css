@@ -20,13 +20,22 @@
    background-size: cover;
  }
 
+ .container {
+   background-color: white;
+   margin-top: 5%;
+ }
+
 .span_title {
   font-size: .5em;
 }
 
-.sign_in {
-  font-size: .5em;
+.sign_in a {
+  font-size: 1.2em;
   float: right;
+  padding-top: .25em;
+  color: #ff9933;
+  padding-left: .5em;
+  padding-right: .5em;
 }
 
 li {
@@ -41,23 +50,36 @@ li {
 .div_beer_name {
   padding-top: 2%;
   font-size: 1em;
+  color: #ff9933;
+}
+
+.li_beer_name {
+  padding-top: 1%;
+  font-size: 1.5em;
+  color: #ff9933;
+}
+
+.index_nav {
+  font-size: 1.2em;
+  float: right;
+  padding-right: .5em;
+  padding-left: .5em;
+  padding-top: .25em;
 }
 
 .index_nav a {
-  color: white;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
+  color: #ff9933;
+  border: 1px solid #ff9933;
+  padding-left: .1em;
+  padding-right: .2em;
 }
 
-.edit_beer {
+.edit_beer_input {
   font-size: .75em;
 }
 
 .beer_selector {
-  background: white;
-  border-radius: 8em;
   margin-top: 1em;
-  width: 75%;
   margin-left: 15%;
 }
 
@@ -68,6 +90,8 @@ a {
 .show_beer_image {
   height: 10em;
   width: auto;
+  margin-bottom: .4em;
+  margin-top: .2em;
 }
 
 .container {
@@ -80,8 +104,13 @@ a {
 }
 
 .title {
-  font-size: 2em;
+  font-size: 2.2em;
   margin: auto;
+  float: left;
+}
+
+.title a {
+  color: #ff9933;
 }
 
 .span_title {
@@ -90,7 +119,7 @@ a {
 
 .new_beer {
   margin: 0 auto;
-  color: white;
+  color: #ff9933;
 }
 
 .new_beer input {
@@ -100,6 +129,27 @@ a {
   color: black;
 }
 
-.new_beer {
-  color: white;
+.edit_beer {
+  margin: 0 auto;
+  color: #ff9933;
+}
+
+.edit_beer input {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  color: black;
+}
+
+.beer_index_title {
+  margin: 0 auto;
+  color: #ff9933;
+}
+
+.beer_show {
+  color: #888888
+}
+
+.review_text {
+  color: black;
 }

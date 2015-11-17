@@ -12,6 +12,7 @@
   <nav class = "nav">
     <h1 class = "title"><%= link_to "BeerLister:", beers_path %>
       <span class = "span_title">What are you drinking tonight?</span>
+      </h1>
       <span class = "sign_in">
         <% if current_user %>
         <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
@@ -20,7 +21,14 @@
         <%= link_to 'Login', new_user_session_path %>
         <% end %>
       </span>
-    </h1>
+      <span class = "index_nav">
+        <%= link_to "Add Beer", new_beer_path %>
+
+        <% if current_user%>
+        <%= link_to "My Beers", users_path %>
+        <%= link_to "My Nights", user_nights_path(current_user) %>
+        <% end%>
+      </span>
     <span class="notice"><%= notice %></span>
     <span class="alert"><%= alert %></span>
   </nav>

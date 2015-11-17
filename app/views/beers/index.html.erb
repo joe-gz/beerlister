@@ -1,11 +1,4 @@
-<div class = "index_nav">
-  <%= link_to "Add Beer", new_beer_path %>
-
-  <% if current_user%>
-  <%= link_to "My Beers", users_path %>
-  <%= link_to "My Nights", user_nights_path(current_user) %>
-  <% end%>
-</div>
+<h2 class = "beer_index_title">The Beers</h2>
 
 <div class = "row">
   <% @beers.each do |beer| %>
@@ -17,7 +10,7 @@
         <!-- the below shows an edit option for beers ONLY for beers the current user creates -->
         <% if current_user %>
         <% if beer.user == current_user %>
-        <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer"%>
+        <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
         <% end %>
         <% else %>
         <% end %>
