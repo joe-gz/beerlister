@@ -36,6 +36,12 @@ class BeersController < ApplicationController
     redirect_to beers_path
   end
 
+  def get_beer
+  if params[:name]
+    @brewerydb = Brewerydb.new(params[:name])
+  end
+end
+
   private
 
   def beer_params
