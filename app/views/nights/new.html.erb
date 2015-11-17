@@ -1,6 +1,7 @@
-<h2>New Night</h2>
+<div class = "wrapper">
+  <h2>New Night</h2>
 
-<%= form_for [current_user, @night] do |f| %>
+  <%= form_for [current_user, @night] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -8,4 +9,5 @@
   <%= f.text_field :description %>
 
   <%= f.submit %>
-<%end%>
+  <%end%>
+</div>

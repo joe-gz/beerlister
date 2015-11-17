@@ -1,18 +1,5 @@
-<h2>My Beers</h2>
 
-<ul>
-  <% @beers.each do |beer| %>
-  <li>
-    <%= beer.name %>
-  </li>
+<h2 class = "beer_index_title">Are you over 21?</h2>
 
-  <li>
-    <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
-  </li>
-
-  <li>
-    <%= link_to "Edit Beer", edit_beer_path(beer)%>
-  </li>
-
-  <% end%>
-</ul>
+<button><%= link_to "Yes", beers_path%></button>
+<button type="button" name="no_button">No</button>

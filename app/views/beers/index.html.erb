@@ -1,26 +1,28 @@
-<h2 class = "beer_index_title">The Beers</h2>
+<div class = "wrapper">
+  <h2 class = "beer_index_title">The Beers</h2>
 
-<div class = "row">
-  <% @beers.each do |beer| %>
+  <div class = "row">
+    <% @beers.each do |beer| %>
 
-  <div class = "col-sm-4">
-    <div class = "beer_selector">
-      <div class = "div_beer_name">
-        <%= beer.name %>
-        <!-- the below shows an edit option for beers ONLY for beers the current user creates -->
-        <% if current_user %>
-        <% if beer.user == current_user %>
-        <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
-        <% end %>
-        <% else %>
-        <% end %>
+    <div class = "col-sm-4">
+      <div class = "beer_selector">
+        <div class = "div_beer_name">
+          <%= beer.name %>
+          <!-- the below shows an edit option for beers ONLY for beers the current user creates -->
+          <% if current_user %>
+          <% if beer.user == current_user %>
+          <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
+          <% end %>
+          <% else %>
+          <% end %>
+        </div>
+
+        <div>
+          <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
+        </div>
+
       </div>
-
-      <div>
-        <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
-      </div>
-
     </div>
+    <% end%>
   </div>
-  <% end%>
 </div>

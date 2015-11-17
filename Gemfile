@@ -7,6 +7,7 @@ gem 'devise'
 gem 'httparty'
 gem 'figaro'
 gem 'brewery_db'
+gem "carrierwave"
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

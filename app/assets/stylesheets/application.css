@@ -21,8 +21,15 @@
  }
 
  .container {
-   background-color: white;
    margin-top: 5%;
+ }
+
+ .wrapper {
+   background-color: white;
+ }
+
+ .age_check {
+  background-color: blue;
  }
 
 .span_title {

@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <h2 class = "li_beer_name">Profile</h2>
+  <ul>
+    <li>
+      <%=image_tag(@user.photo_url, class: "beer_image")%>
+    </li>
+
+    <li class="beer_show">
+      <%=@user.email%>
+    </li>
+  </ul>
+
+  <ul>
+    <h3 class = "li_beer_name">My Beers</h3>
+    <% @beers.each do |beer| %>
+    <li class="beer_show">
+      <%= beer.name %>
+    </li>
+
+    <li>
+      <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
+    </li>
+
+    <li>
+      <%= link_to "Edit Beer", edit_beer_path(beer)%>
+    </li>
+
+    <% end%>
+  </ul>
+
+  <%= form_for @user do |f| %>
+  <%= f.label :photo_url %>
+  <%= f.text_field :photo_url%>
+
+  <%= f.submit class:"submit"%>
+  <%end%>
+
+</div>

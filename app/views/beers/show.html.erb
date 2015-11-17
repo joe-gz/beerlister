@@ -1,62 +1,64 @@
-<ul>
-  <li class = "li_beer_name">
-    <%= @beer.name %>
-  </li>
-
-  <div class = "beer_show">
-    <li>
-      Type: <%= @beer.beer_type %>
+<div class = "wrapper">
+  <ul>
+    <li class = "li_beer_name">
+      <%= @beer.name %>
     </li>
 
-    <li>
-      Brewery: <%= @beer.brewery %>
-    </li>
+    <div class = "beer_show">
+      <li>
+        Type: <%= @beer.beer_type %>
+      </li>
 
-    <li>
-      ABV(%): <%= @beer.abv %>
-    </li>
+      <li>
+        Brewery: <%= @beer.brewery %>
+      </li>
 
-    <li>
-      <%= image_tag(@beer.photo_url, class: "show_beer_image")%>
-    </li>
-    
-    <li>
-      <%= link_to "Edit Beer", edit_beer_path(@beer)%>
-      <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
-    </li>
+      <li>
+        ABV(%): <%= @beer.abv %>
+      </li>
 
-    <% if current_user %>
-    <%= form_for [@beer,@drinklist] do |f| %>
-    <select name="night">
-      <%= current_user.nights.each do |night|  %>
-      <option value="<%= night.title %>"><%= night.title %></option>
+      <li>
+        <%= image_tag(@beer.photo_url, class: "show_beer_image")%>
+      </li>
+
+      <li>
+        <%= link_to "Edit Beer", edit_beer_path(@beer)%>
+        <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
+      </li>
+
+      <% if current_user %>
+      <%= form_for [@beer,@drinklist] do |f| %>
+      <select name="night">
+        <%= current_user.nights.each do |night|  %>
+        <option value="<%= night.title %>"><%= night.title %></option>
+        <%end%>
+      </select>
+      <%= f.submit "Add to a Night"%>
       <%end%>
-    </select>
-    <%= f.submit "Add to a Night"%>
-    <%end%>
-    <%end%>
+      <%end%>
 
+      <li>
+        Review: <span class = "review_text"><%= @beer.review %></span>
+      </li>
+
+      <li>
+        Comments:
+        <% @beer.comments.each do |comment| %>
+        <div>
+          Comment from <%= comment.user.email %>:
+        </div>
+        <div>
+          <span class = "review_text"><%= comment.comment_text %></span>
+        </div>
+        <div>
+          <%= link_to "Delete Comment", beer_comment_path(@beer,comment), method: :delete%>
+        </div>
+        <% end %>
+      </li>
+    </div>
     <li>
-      Review: <span class = "review_text"><%= @beer.review %></span>
+      <%= link_to "Add Comment", new_beer_comment_path(@beer)%>
     </li>
 
-    <li>
-      Comments:
-      <% @beer.comments.each do |comment| %>
-      <div>
-        Comment from <%= comment.user.email %>:
-      </div>
-      <div>
-        <span class = "review_text"><%= comment.comment_text %></span>
-      </div>
-      <div>
-        <%= link_to "Delete Comment", beer_comment_path(@beer,comment), method: :delete%>
-      </div>
-      <% end %>
-    </li>
-  </div>
-  <li>
-    <%= link_to "Add Comment", new_beer_comment_path(@beer)%>
-  </li>
-
-</ul>
+  </ul>
+</div>

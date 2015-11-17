@@ -1,8 +1,11 @@
-<h2>My Nights</h2>
+<div class = "wrapper">
 
-<%= link_to "New Night", new_user_night_path%>
+  <h2>My Nights</h2>
+
+  <%= link_to "New Night", new_user_night_path%>
 
 
-<% current_user.nights.each do |night| %>
-<%= link_to night.title, user_night_path(current_user,night) %>
-<%end %>
+  <% current_user.nights.each do |night| %>
+  <%= link_to night.title, user_night_path(current_user,night) %>
+  <%end %>
+</div>
