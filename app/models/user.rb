@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
   has_many :beers
   has_many :nights
   has_many :comments
