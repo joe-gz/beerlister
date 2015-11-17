@@ -15,14 +15,11 @@
     <% @beers.each do |beer| %>
     <li class="beer_show">
       <%= beer.name %>
+      <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
     </li>
 
     <li>
       <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
-    </li>
-
-    <li>
-      <%= link_to "Edit Beer", edit_beer_path(beer)%>
     </li>
 
     <% end%>

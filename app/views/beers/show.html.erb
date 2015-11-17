@@ -22,8 +22,10 @@
       </li>
 
       <li>
+        <% if @beer.user == current_user %>
         <%= link_to "Edit Beer", edit_beer_path(@beer)%>
         <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
+        <%end%>
       </li>
 
       <% if current_user %>
@@ -37,7 +39,7 @@
       <%end%>
       <%end%>
 
-      <li>
+      <li class="review">
         Review: <span class = "review_text"><%= @beer.review %></span>
       </li>
 

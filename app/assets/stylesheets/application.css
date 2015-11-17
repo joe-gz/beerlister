@@ -12,7 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
  */
+
 
  body {
    background-image: url('beerbar.jpg');
@@ -40,7 +42,7 @@
   font-size: 1.2em;
   float: right;
   padding-top: .25em;
-  color: #ff9933;
+  color: #ed2b2f;
   padding-left: .5em;
   padding-right: .5em;
 }
@@ -57,13 +59,13 @@ li {
 .div_beer_name {
   padding-top: 2%;
   font-size: 1em;
-  color: #ff9933;
+  color: #ed2b2f;
 }
 
 .li_beer_name {
   padding-top: 1%;
   font-size: 1.5em;
-  color: #ff9933;
+  color: #ed2b2f;
 }
 
 .index_nav {
@@ -75,8 +77,7 @@ li {
 }
 
 .index_nav a {
-  color: #ff9933;
-  border: 1px solid #ff9933;
+  color: #ed2b2f;
   padding-left: .1em;
   padding-right: .2em;
 }
@@ -117,7 +118,7 @@ a {
 }
 
 .title a {
-  color: #ff9933;
+  color: #ed2b2f;
 }
 
 .span_title {
@@ -126,7 +127,7 @@ a {
 
 .new_beer {
   margin: 0 auto;
-  color: #ff9933;
+  color: #ed2b2f;
 }
 
 .new_beer input {
@@ -138,7 +139,7 @@ a {
 
 .edit_beer {
   margin: 0 auto;
-  color: #ff9933;
+  color: #ed2b2f;
 }
 
 .edit_beer input {
@@ -148,9 +149,21 @@ a {
   color: black;
 }
 
+.new_comment {
+  margin: 0 auto;
+  color: #ed2b2f;
+}
+
+.new_comment input {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  color: black;
+}
+
 .beer_index_title {
   margin: 0 auto;
-  color: #ff9933;
+  color: #ed2b2f;
 }
 
 .beer_show {
@@ -159,6 +172,9 @@ a {
 
 .review_text {
   color: black;
+}
+
+.review {
 }
 
 #user_image {
