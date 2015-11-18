@@ -40,10 +40,10 @@ class BeersController < ApplicationController
   end
 
   def get_beer
-  if params[:name]
-    @brewerydb = Brewerydb.new(params[:name])
+    if params[:name]
+      @brewerydb = Brewerydb.new(params[:name])
+    end
   end
-end
 
   private
 
