@@ -10,6 +10,7 @@ gem 'brewery_db'
 gem "carrierwave"
 gem 'fog'
 gem 'pry'
+gem 'rails_12factor'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
