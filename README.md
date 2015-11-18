@@ -1,4 +1,6 @@
-# beerlister
+# beerlogger
+
+https://beerlogger.herokuapp.com/
 
 This app will allow users to post about beers they drink throughout a night, or simply select favorite beers and have them logged.
 A user will be able to add a beer to the public domain so that other users can then add to their nights as well.  Each "night" belongs to one user.
