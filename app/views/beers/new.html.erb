@@ -1,5 +1,15 @@
 <div class = "wrapper">
   <h2 class = "new_beer">Add a New Beer</h2>
 
-  <%= render "form" %>
+  <%= form_for @beer do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name%>
+
+      <%= f.label :review %>
+      <%= f.text_field :review %>
+
+      <%= f.submit class:"submit"%>
+
+  <%end%>
 </div>

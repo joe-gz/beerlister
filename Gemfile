@@ -9,6 +9,7 @@ gem 'figaro'
 gem 'brewery_db'
 gem "carrierwave"
 gem 'fog'
+gem 'pry'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

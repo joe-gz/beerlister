@@ -1,5 +1,27 @@
 <div class = "wrapper">
   <h2 class = "edit_beer">Edit <%=@beer.name%> </h2>
 
-  <%= render "form" %>
+  <%= form_for @beer do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name%>
+
+      <%= f.label :beer_type %>
+      <%= f.text_field :beer_type%>
+
+      <%= f.label :brewery %>
+      <%= f.text_field :brewery%>
+
+      <%= f.label :photo_url %>
+      <%= f.text_field :photo_url%>
+
+      <%= f.label :abv %>
+      <%= f.text_field :abv%>
+
+      <%= f.label :review %>
+      <%= f.text_field :review %>
+
+      <%= f.submit class:"submit"%>
+
+  <%end%>
 </div>
