@@ -16,9 +16,7 @@ class BeersController < ApplicationController
 
   def create
     if params[:beer][:name]
-      binding.pry
       @brewerydb = Brewerydb.new(params[:beer][:name])
-      binding.pry
       @beer = current_user.beers.create(name:@brewerydb.name,beer_type:@brewerydb.style, photo_url:@brewerydb.photo_url,abv:@brewerydb.abv)
     end
     redirect_to beers_path

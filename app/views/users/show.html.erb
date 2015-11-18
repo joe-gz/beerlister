@@ -9,28 +9,39 @@
       <%=@user.email%>
     </li>
   </ul>
-
-  <ul>
-    <h3 class = "li_beer_name">My Beers</h3>
-    <% @beers.each do |beer| %>
-    <li class="beer_show">
-      <%= beer.name %>
-      <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
-    </li>
-
-    <li>
-      <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
-    </li>
-
-    <% end%>
-  </ul>
-
   <%= form_for @user do |f| %>
 
   <%= f.label :image %>
   <%= f.file_field :image %>
 
   <%= f.submit %>
-<%end%>
+  <%end%>
+
+  <h3 class = "li_beer_name">My Beers</h3>
+
+  <div class = "row">
+    <% @beers.each do |beer| %>
+
+    <div class = "col-sm-4">
+      <div class = "beer_selector">
+        <div class = "div_beer_name">
+          <%= beer.name %>
+          <!-- the below shows an edit option for beers ONLY for beers the current user creates -->
+          <% if current_user %>
+          <% if beer.user == current_user %>
+          <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
+          <% end %>
+          <% else %>
+          <% end %>
+        </div>
+
+        <div>
+          <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
+        </div>
+
+      </div>
+    </div>
+    <% end%>
+  </div>
 
 </div>

@@ -1,13 +1,21 @@
 <div class="wrapper">
-  <div><%= @night.title %></div>
-  <div><%= @night.description %></div>
-  <ul>
+  <div class="row">
+    <h3 class = "li_beer_name"><%= @night.title %>
+      <%= link_to "Delete Night", user_night_path(current_user,@night),class:"new_night_link", method: :delete%>
+    </h3>
+    <div class = "night_description"><%= @night.description %></div>
     <% @night.drinklists.each do |drinklist|%>
-    <li><%= drinklist.beer.name %></li>
-    <li><%=link_to image_tag(drinklist.beer.photo_url, class: "beer_image"), beer_path(drinklist.beer)%></li>
-    <%= link_to "Remove Beer From Night", user_night_drinklist_path(current_user,@night,drinklist), method: :delete%>
+    <div class = "col-sm-4">
+      <div class = "beer_selector">
+        <div class = "div_beer_name">
+          <%= drinklist.beer.name %>
+        </div>
+        <div>
+          <%=link_to image_tag(drinklist.beer.photo_url, class: "beer_image"), beer_path(drinklist.beer)%>
+        </div>
+        <%= link_to "Remove Beer From Night", user_night_drinklist_path(current_user,@night,drinklist), method: :delete%>
+      </div>
+    </div>
     <%end%>
-  </ul>
-
-  <%= link_to "Delete Night", user_night_path(current_user,@night), method: :delete%>
+  </div>
 </div>

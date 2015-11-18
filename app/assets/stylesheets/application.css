@@ -24,6 +24,7 @@
 
  .container {
    margin-top: 5%;
+   text-align: center;
  }
 
  .wrapper {
@@ -66,6 +67,7 @@ li {
   padding-top: 1%;
   font-size: 1.5em;
   color: #ed2b2f;
+  margin: 0 auto;
 }
 
 .index_nav {
@@ -102,10 +104,6 @@ a {
   margin-top: .2em;
 }
 
-.container {
-  text-align: center;
-}
-
 .nav {
   text-align: center;
   background-color: rgba(0, 0, 0,0.5);
@@ -125,36 +123,12 @@ a {
   color: white;
 }
 
-.new_beer {
+.new_beer, .new_night,.edit_beer, .new_comment {
   margin: 0 auto;
   color: #ed2b2f;
 }
 
-.new_beer input {
-  margin: 0 auto;
-  text-align: center;
-  display: block;
-  color: black;
-}
-
-.edit_beer {
-  margin: 0 auto;
-  color: #ed2b2f;
-}
-
-.edit_beer input {
-  margin: 0 auto;
-  text-align: center;
-  display: block;
-  color: black;
-}
-
-.new_comment {
-  margin: 0 auto;
-  color: #ed2b2f;
-}
-
-.new_comment input {
+.new_beer input, .new_night input, .edit_beer input, .new_comment input {
   margin: 0 auto;
   text-align: center;
   display: block;
@@ -166,7 +140,7 @@ a {
   color: #ed2b2f;
 }
 
-.beer_show {
+.beer_show, .night_description {
   color: #888888
 }
 
@@ -174,10 +148,13 @@ a {
   color: black;
 }
 
-.review {
-}
-
 #user_image {
   text-align: center;
   margin-left: 46%;
+}
+
+.new_night_link {
+  padding-top: 2%;
+  font-size: .5em;
+  color: #ed2b2f;
 }

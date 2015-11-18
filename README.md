@@ -8,9 +8,7 @@ Models:
 Users, beers, nights, comments, drinklist(join table between beers and nights)
 
 To-do:
-2) Create user profile page that shows only beers user has created
-4) Users should be able to comment or add pictures to their own nights, but can also comment on ANY beer in the public space
-5) Add styling
+
 6) Add JS buttons for help and settings
 
 Done:
@@ -19,10 +17,18 @@ Can add beers, edit, and delete
 Users can sign up, sign in, and logout
 1) Add Night and Drinklist model and connect with beers on main page
 3) Users should only be able to edit beers that they posted, but should be able to see any of them
+2) Create user profile page that shows only beers user has created
+4) Users should be able to comment or add pictures to their own nights, but can also comment on ANY beer in the public space
+5) Add styling
 
-Bonus:
+Done Bonus:
 1) Add AWS so users can post their own pictures
 2) Figure out how to add in API data to allow users to select beers instead of entering in all of the information
+
+
+
+Bonus:
+
 3) Include a Favorite model for user profiles
 4) Can users sign in with FB?
 5) Add map box - week 10 curriculum
