@@ -13,7 +13,7 @@
         <div>
           <%=link_to image_tag(drinklist.beer.photo_url, class: "beer_image"), beer_path(drinklist.beer)%>
         </div>
-        <%= link_to "Remove Beer From Night", user_night_drinklist_path(current_user,@night,drinklist), method: :delete%>
+        <%= link_to "Remove Beer From Night", user_night_drinklist_path(current_user,@night,drinklist),class:"user_night", method: :delete%>
       </div>
     </div>
     <%end%>

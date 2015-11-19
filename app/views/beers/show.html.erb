@@ -31,7 +31,7 @@
         <option value="<%= night.title %>"><%= night.title %></option>
         <%end%>
       </select>
-      <%= f.submit "Add to a Night"%>
+      <%= f.submit "Add to a Night", class:"add_to_night"%>
       <%end%>
       <%end%>
 
@@ -39,24 +39,28 @@
         Review: <span class = "review_text"><%= @beer.review %></span>
       </li>
 
-      <li>
-        Comments:
-        <% @beer.comments.each do |comment| %>
-        <div>
-          Comment from <%= comment.user.email %>:
-        </div>
-        <div>
-          <span class = "review_text"><%= comment.comment_text %></span>
-        </div>
-        <div>
-          <%= link_to "Delete Comment", beer_comment_path(@beer,comment), method: :delete%>
-        </div>
-        <% end %>
-      </li>
+      Comments:
+      <% @beer.comments.each do |comment| %>
+      <div>
+        Comment from <%= comment.user.email %>:
+      </div>
+      <div>
+        <span class = "review_text"><%= comment.comment_text %></span>
+      </div>
+      <div>
+        <%= link_to "Delete Comment", beer_comment_path(@beer,comment), method: :delete%>
+      </div>
+      <% end %>
     </div>
-    <li>
-      <%= link_to "Add Comment", new_beer_comment_path(@beer)%>
-    </li>
+    <%= form_for [@beer,@comment] do |f| %>
+    <div class="comment_text">
+      <%= f.text_field :comment_text %>
+    </div>
 
-  </ul>
+    <div>
+      <%= f.submit "Add Comment",class:"comment_button"%>
+    </div>
+  <%end%>
+
+</ul>
 </div>

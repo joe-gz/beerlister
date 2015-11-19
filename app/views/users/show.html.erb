@@ -2,7 +2,7 @@
   <h2 class = "li_beer_name">Profile</h2>
   <ul>
     <li>
-      <%=image_tag(@user.image, class: "beer_image")%>
+      <%=image_tag(@user.image, class: "user_image")%>
     </li>
 
     <li class="beer_show">
@@ -11,10 +11,9 @@
   </ul>
   <%= form_for @user do |f| %>
 
-  <%= f.label :image %>
   <%= f.file_field :image %>
 
-  <%= f.submit %>
+  <%= f.submit "Change User Image", class:"submit user_image_submit" %>
   <%end%>
 
   <h3 class = "li_beer_name">My Beers</h3>

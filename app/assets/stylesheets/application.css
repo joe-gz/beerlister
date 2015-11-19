@@ -1,39 +1,41 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require bootstrap.min
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require bootstrap.min
+*/
 
 
- body {
-   background-image: url('beerbar.jpg');
-   background-repeat: no-repeat;
-   background-size: cover;
- }
+body {
+  background-image: url('beerbar.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
- .container {
-   margin-top: 5%;
-   text-align: center;
- }
+.container {
+  margin-top: 5%;
+  text-align: center;
+}
 
- .wrapper {
-   background-color: white;
- }
+.wrapper {
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0 0 2px 4px rgba(0,0,0,0.25)
+}
 
- .age_check {
-  background-color: blue;
- }
+li, a {
+  list-style-type: none;
+}
 
 .span_title {
   font-size: .5em;
@@ -48,13 +50,13 @@
   padding-right: .5em;
 }
 
-li {
-  list-style-type: none;
-}
-
-.beer_image {
+.beer_image, .user_image {
   height: 10em;
   width: auto;
+}
+
+.user_image {
+  margin-left: -5%;
 }
 
 .div_beer_name {
@@ -93,10 +95,6 @@ li {
   margin-left: 15%;
 }
 
-a {
-  text-decoration: none;
-}
-
 .show_beer_image {
   height: 10em;
   width: auto;
@@ -119,11 +117,7 @@ a {
   color: #ed2b2f;
 }
 
-.span_title {
-  color: white;
-}
-
-.new_beer, .new_night,.edit_beer, .new_comment {
+.new_beer, .new_night,.edit_beer, .new_comment, .beer_index_title {
   margin: 0 auto;
   color: #ed2b2f;
 }
@@ -133,11 +127,6 @@ a {
   text-align: center;
   display: block;
   color: black;
-}
-
-.beer_index_title {
-  margin: 0 auto;
-  color: #ed2b2f;
 }
 
 .over_twenty_one {
@@ -168,17 +157,28 @@ a {
   font-size: 1.5em;
 }
 
-
-.notice, .alert{
-  color: white;
-}
-
 .button {
   width: 10%;
   background-color: #ed2b2f;
   color: white;
+  border-radius: 15%;
 }
 
-.button a:visited {
+.button a:visited, .notice, .alert, .span_title {
   color: white;
+}
+
+.add_to_night, .comment_button, .submit {
+  background-color: #ed2b2f;
+  color: white;
+  border-radius: 10%;
+}
+
+.comment_button, .user_image_submit {
+  width: 15%;
+  font-size: .75em;
+}
+
+.user_night {
+  font-size: .75em;
 }

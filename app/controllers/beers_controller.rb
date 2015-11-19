@@ -8,6 +8,7 @@ class BeersController < ApplicationController
   def show
     @drinklist = Drinklist.new
     @nights = Night.all
+    @comment = Comment.new
   end
 
   def new
@@ -17,7 +18,7 @@ class BeersController < ApplicationController
   def create
     if params[:beer][:name]
       @brewerydb = Brewerydb.new(params[:beer][:name])
-      @beer = current_user.beers.create(name:@brewerydb.name,beer_type:@brewerydb.style, photo_url:@brewerydb.photo_url,abv:@brewerydb.abv)
+      @beer = current_user.beers.create(review: params[:review], name:@brewerydb.name,beer_type:@brewerydb.style, photo_url:@brewerydb.photo_url,abv:@brewerydb.abv)
       flash[:notice] = "#{@beer.name} has been added to the list!"
     end
     redirect_to beers_path
