@@ -175,11 +175,11 @@ li, a {
   border-radius: 15%;
 }
 
-.button a:visited, .notice, .alert, .span_title {
+.button a:visited, .notice, .alert, .span_title, .field, .log_in {
   color: white;
 }
 
-.add_to_night, .comment_button, .submit {
+.actions input,.add_to_night, .comment_button, .submit {
   background-color: #ed2b2f;
   color: white;
   border-radius: 10%;
