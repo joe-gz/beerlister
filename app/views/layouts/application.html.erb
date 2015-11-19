@@ -27,13 +27,15 @@
       <%= link_to "My Nights", user_nights_path(current_user) %>
       <% end%>
     </span>
-    <div>
-      <span class="notice"><%= notice %></span>
-      <span class="alert"><%= alert %></span>
-    </div>
   </nav>
 
   <div class = "container">
+    <div>
+      <% if flash[:notice] %>
+          <span class="notice"><%= flash[:notice] %></span>
+        <% end %>
+      <span class="alert"><%= alert %></span>
+    </div>
     <%= yield %>
   </div>
 </body>

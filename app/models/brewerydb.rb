@@ -14,8 +14,18 @@ class Brewerydb
     response = HTTParty.get(url)
 
     # instantiating temp_f and weather by parsing through the JSON response
-    @abv = response["data"][0]["abv"]
-    @style = response["data"][0]["style"]["shortName"]
+    if response["data"][0]
+      @abv = response["data"][0]["abv"]
+    else
+      @abv = "abv unknown"
+    end
+
+    if response["data"][0]["style"]
+      @style = response["data"][0]["style"]["shortName"]
+    else
+      @style = "Style unknown"
+    end
+
     if response["data"][0]["labels"]
       @photo_url = response["data"][0]["labels"]["large"]
     else
