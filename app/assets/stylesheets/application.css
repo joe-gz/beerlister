@@ -197,3 +197,7 @@ li, a {
 .new_drinklist {
   margin-bottom: 2%;
 }
+
+.add_drink input {
+  font-size: .5em;
+}
