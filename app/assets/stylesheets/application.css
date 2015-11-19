@@ -140,6 +140,11 @@ a {
   color: #ed2b2f;
 }
 
+.over_twenty_one {
+  margin: 0 auto;
+  color: white;
+}
+
 .beer_show, .night_description {
   color: #888888
 }
@@ -165,5 +170,15 @@ a {
 
 
 .notice, .alert{
+  color: white;
+}
+
+.button {
+  width: 10%;
+  background-color: #ed2b2f;
+  color: white;
+}
+
+.button a:visited {
   color: white;
 }
