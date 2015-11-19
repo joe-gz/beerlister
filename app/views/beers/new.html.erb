@@ -3,13 +3,15 @@
 
   <%= form_for @beer do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name%>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
 
-      <%= f.label :review %>
-      <%= f.text_field :review %>
+  <div>
+    <%= f.label :review %>
+  </div>
+  <%= f.text_area :review, size: "18x4" %>
 
-      <%= f.submit class:"submit"%>
+  <%= f.submit class:"submit"%>
 
   <%end%>
 </div>

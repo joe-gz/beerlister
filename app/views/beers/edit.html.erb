@@ -4,8 +4,10 @@
   Only the user who posted the beer can edit -->
   <%= form_for @beer do |f| %>
 
-  <%= f.label :review %>
-  <%= f.text_field :review %>
+  <div>
+    <%= f.label :review %>
+  </div>
+  <%= f.text_area :review, size: "18x4" %>
 
   <%= f.submit class:"submit"%>
 
