@@ -23,6 +23,10 @@
         <% if @beer.user == current_user %>
         <%= link_to "Edit Beer", edit_beer_path(@beer)%>
         <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
+
+        <% elsif current_user.email == "j@example.com" %>
+        <%= link_to "Edit Beer", edit_beer_path(@beer)%>
+        <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
         <%end%>
       </li>
 
