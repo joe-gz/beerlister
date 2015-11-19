@@ -12,6 +12,7 @@
           ONLY for beers the current user creates -->
           <% if current_user %>
           <% if beer.user == current_user %>
+          <!-- send user to edit.html.erb -->
           <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
           <% end %>
           <% else %>
@@ -19,6 +20,7 @@
         </div>
 
         <div>
+          <!-- send user to show.html.erb -->
           <%=link_to image_tag(beer.photo_url, class: "beer_image"), beer_path(beer)%>
         </div>
 

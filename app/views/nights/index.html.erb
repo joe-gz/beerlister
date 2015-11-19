@@ -6,6 +6,7 @@
   <div>
     <% current_user.nights.each do |night| %>
     <div>
+      <!-- links to specific user/night combination, as per the selection -->
       <%= link_to night.title, user_night_path(current_user,night), class:"night_link" %>
     </div>
     <%end %>
