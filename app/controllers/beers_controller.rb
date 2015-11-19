@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-# set beer ahead of time to clean code
+  # set beer ahead of time to clean code
   before_action :set_beer, only: [:show,:edit,:update,:destroy]
   def index
     @beers = Beer.all

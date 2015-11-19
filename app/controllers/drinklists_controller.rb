@@ -27,7 +27,7 @@ class DrinklistsController < ApplicationController
   def update
     @night = Night.find(params[:night_id])
     @drinklist = Drinklist.find(params[:id])
-    
+
     # increment the beer count by 1 every time the submit button is selected
     @drinklist.increment(:beer_count, 1)
     @drinklist.save
