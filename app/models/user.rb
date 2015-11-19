@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
+  # users can create many beers, have many nights, and post many comments
   has_many :beers
   has_many :nights
   has_many :comments

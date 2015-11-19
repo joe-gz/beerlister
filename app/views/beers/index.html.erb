@@ -8,7 +8,8 @@
       <div class = "beer_selector">
         <div class = "div_beer_name">
           <%= beer.name %>
-          <!-- the below shows an edit option for beers ONLY for beers the current user creates -->
+          <!-- the below shows an edit option for beers
+          ONLY for beers the current user creates -->
           <% if current_user %>
           <% if beer.user == current_user %>
           <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>

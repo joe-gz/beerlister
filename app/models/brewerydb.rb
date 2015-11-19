@@ -1,11 +1,11 @@
 class Brewerydb
-  # creates getter methods for temp_f, weather, city and state.
+
   attr_reader :name, :nameDisplay, :abv, :style, :label, :photo_url
 
-  # initialize method takes 2 arguments city and state
+  # initialize method takes name as it's argument
   def initialize(name)
 
-    # create the url using the city and state arguments. Also utilizing ENV
+    # create the url using the name arguments. Also utilizing ENV
     # variable provided by figaro. Key value should be in 'config/application.yml'
     url = "http://api.brewerydb.com/v2/search?q=#{name.gsub(/\s/, "_")}&type=beer&key=#{ENV["brewerydb_api_key"]}"
 
@@ -13,7 +13,7 @@ class Brewerydb
     # line above and storing the response into the variable below.
     response = HTTParty.get(url)
 
-    # instantiating temp_f and weather by parsing through the JSON response
+    # instantiating abv, style, and photo_url by parsing through the JSON response
     if response["data"][0]
       @abv = response["data"][0]["abv"]
     else

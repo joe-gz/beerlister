@@ -8,10 +8,13 @@
 </head>
 <body>
   <nav class = "nav">
-    <h1 class = "title"><%= link_to "BeerLogger:", beers_path %>
+    <h1 class = "title">
+      <!-- link to home beers page, not the root, which is the "age" page -->
+      <%= link_to "BeerLogger:", beers_path %>
       <span class = "span_title">What are you drinking tonight?</span>
     </h1>
     <span class = "sign_in">
+      <!-- Devise sign in -->
       <% if current_user %>
       <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
       <% else %>
@@ -20,9 +23,9 @@
       <% end %>
     </span>
     <span class = "index_nav">
-      <%= link_to "Add Beer", new_beer_path %>
-
       <% if current_user%>
+      <!-- only show if signed in" -->
+      <%= link_to "Add Beer", new_beer_path %>
       <%= link_to "My Profile", user_path(current_user) %>
       <%= link_to "My Nights", user_nights_path(current_user) %>
       <% end%>
@@ -31,12 +34,16 @@
 
   <div class = "container">
     <div>
+      <!-- flash messages will display right above the wrapper that is
+      placed in each page -->
       <% if flash[:notice] %>
-          <span class="notice"><%= flash[:notice] %></span>
-        <% end %>
+      <span class="notice"><%= flash[:notice] %></span>
+      <% end %>
       <span class="alert"><%= alert %></span>
     </div>
     <%= yield %>
   </div>
+  <!-- Testing with Disqus below -->
+  <!-- <script id="dsq-count-scr" src="//beerlogger.disqus.com/count.js" async></script> -->
 </body>
 </html>

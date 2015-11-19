@@ -3,7 +3,11 @@
     <h3 class = "li_beer_name"><%= @night.title %>
       <%= link_to "Delete Night", user_night_path(current_user,@night),class:"new_night_link", method: :delete%>
     </h3>
+
     <div class = "night_description"><%= @night.description %></div>
+
+    <!-- calling the list of beers user has attached to given night
+    this is done through the join table of drinklists that has both night and drink IDs -->
     <% @night.drinklists.each do |drinklist|%>
     <div class = "col-sm-4">
       <div class = "beer_selector">

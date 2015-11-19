@@ -18,16 +18,21 @@
       </li>
 
       <li>
+        <!-- provide edit and delete options on the beer ONLY if the current user
+        create the beer -->
         <% if @beer.user == current_user %>
         <%= link_to "Edit Beer", edit_beer_path(@beer)%>
         <%= link_to "Delete Beer", beer_path(@beer), method: :delete%>
         <%end%>
       </li>
 
+      <!-- Create a drop down to select a night to add beer to -->
       <% if current_user %>
       <%= form_for [@beer,@drinklist] do |f| %>
       <select name="night">
+        <!-- only show current user nights -->
         <%= current_user.nights.each do |night|  %>
+        <!-- list out each night in the dropdown -->
         <option value="<%= night.title %>"><%= night.title %></option>
         <%end%>
       </select>
@@ -40,6 +45,7 @@
       </li>
 
       Comments:
+      <!-- display each comment in a list -->
       <% @beer.comments.each do |comment| %>
       <div>
         Comment from <%= comment.user.email %>:
@@ -48,19 +54,43 @@
         <span class = "review_text"><%= comment.comment_text %></span>
       </div>
       <div>
+        <!-- deletes the comment in the nested beer-to-comment path -->
         <%= link_to "Delete Comment", beer_comment_path(@beer,comment), method: :delete%>
       </div>
       <% end %>
     </div>
+    <!-- Allow for user to post comments on the page instead of being redirected -->
     <%= form_for [@beer,@comment] do |f| %>
     <div class="comment_text">
       <%= f.text_field :comment_text %>
     </div>
-
     <div>
       <%= f.submit "Add Comment",class:"comment_button"%>
     </div>
-  <%end%>
+    <%end%>
 
+    <!-- testing with Disqus below -->
+    <!-- <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+
+  s.src = '//beerlogger.disqus.com/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript> -->
 </ul>
 </div>
