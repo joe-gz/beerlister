@@ -9,3 +9,5 @@ class Beer < ActiveRecord::Base
   has_many :drinklists, dependent: :destroy
   has_many :nights, through: :drinklists
 end
+
+# PZ: probably too many comments here for deploy, but if it's useful for you

@@ -12,6 +12,7 @@
           ONLY for beers the current user creates -->
           <% if current_user %>
           <% if beer.user == current_user %>
+          <!-- PZ - watch your indentation here -->
           <!-- send user to edit.html.erb -->
           <%= link_to "Edit Beer", edit_beer_path(beer), class:"edit_beer_input"%>
           <% end %>
