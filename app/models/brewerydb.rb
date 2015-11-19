@@ -16,8 +16,11 @@ class Brewerydb
     # instantiating temp_f and weather by parsing through the JSON response
     @abv = response["data"][0]["abv"]
     @style = response["data"][0]["style"]["shortName"]
-    @photo_url = response["data"][0]["labels"]["large"]
-
+    if response["data"][0]["labels"]
+      @photo_url = response["data"][0]["labels"]["large"]
+    else
+      @photo_url = 'noimage.jpg'
+    end
     # storing arguments as instance varibles in the model
     @name = name
   end
