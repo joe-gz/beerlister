@@ -5,15 +5,34 @@ https://beerlogger.herokuapp.com/
 This app will allow users to post about beers they drink throughout a night, or simply select favorite beers and have them logged.
 A user will be able to add a beer to the public domain so that other users can then add to their nights as well.  Each "night" belongs to one user.
 
+The approach I took to this was very much step-by-step.  I first wanted to get the two model, users and beers, app working. I then refactored a couple times as I layered in additional models.
+Once I had the basic functionality, I looked to add in more complicated aspects such as AWS, API data, and additional features such as beer counts
 
-Models:
+#Technologies used
+Rails
+AWS
+Brewerydb AWI
+css
+html
+
+#Installation Instructions
+Fork and clone this repo
+Run bundle install in your CLI once in the project directory
+Since I used AWS, if you want to reuse this project you will have to create your own access keys from AWS
+Once done, you will also have to install the fog and figaro gems and install them
+The same will need to be done for the API data
+
+#Models:
 Users, beers, nights, comments, drinklist(join table between beers and nights)
 
-To-do:
+#Would've liked to do:
 
-6) Add JS buttons for help and settings
+Add cancancan
+Add favorites
+sign in w/FB
+Add JS buttons for help and settings
 
-Done:
+#Done:
 Added Beer and User model
 Can add beers, edit, and delete
 Users can sign up, sign in, and logout
@@ -23,14 +42,6 @@ Users can sign up, sign in, and logout
 4) Users should be able to comment or add pictures to their own nights, but can also comment on ANY beer in the public space
 5) Add styling
 
-Done Bonus:
+#Done Bonus:
 1) Add AWS so users can post their own pictures
 2) Figure out how to add in API data to allow users to select beers instead of entering in all of the information
-
-
-
-Bonus:
-
-3) Include a Favorite model for user profiles
-4) Can users sign in with FB?
-5) Add map box - week 10 curriculum
