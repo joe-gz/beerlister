@@ -179,6 +179,10 @@ li, a {
   color: white;
 }
 
+.field input {
+  color: black;
+}
+
 .actions input,.add_to_night, .comment_button, .submit {
   background-color: #ed2b2f;
   color: white;
