@@ -164,15 +164,28 @@ li, a {
   color: #ed2b2f;
 }
 
+.new_night_beer {
+  padding-top: 2%;
+  font-size: 1em;
+  color: #ed2b2f;
+}
+
 .night_link {
   font-size: 1.5em;
 }
 
 .button {
-  width: 10%;
+  font-size: 2em;
+  padding: .5%;
+  padding-left: 1%;
+  padding-right: 1%;
   background-color: #ed2b2f;
   color: white;
   border-radius: 15%;
+}
+
+.entry {
+  margin-top: 2.5%;
 }
 
 .button a:visited, .notice, .alert, .span_title, .field, .log_in {

@@ -33,6 +33,7 @@
 
       <!-- Create a drop down to select a night to add beer to -->
       <% if current_user %>
+      <% if current_user.nights.count > 0 %>
       <%= form_for [@beer,@drinklist] do |f| %>
       <select name="night">
         <!-- only show current user nights -->
@@ -42,6 +43,9 @@
         <%end%>
       </select>
       <%= f.submit "Add to a Night", class:"add_to_night"%>
+      <%end%>
+      <% else %>
+        <span><%= link_to "New Night", new_user_night_path(current_user), class:"new_night_beer"%></span>
       <%end%>
       <%end%>
 
