@@ -19,6 +19,7 @@ class BeersController < ApplicationController
     if params[:beer][:name]
       @brewerydb = Brewerydb.new(params[:beer][:name])
       @beer = current_user.beers.create(review: params[:beer][:review], name:@brewerydb.name,beer_type:@brewerydb.style, photo_url:@brewerydb.photo_url,abv:@brewerydb.abv)
+      # PZ - break up line 21 for readability
       flash[:notice] = "#{@beer.name} has been added to the list!"
     end
     redirect_to beers_path
@@ -56,4 +57,6 @@ class BeersController < ApplicationController
   def set_beer
     @beer = Beer.find(params[:id])
   end
+  # PZ - Does this work?
+
 end

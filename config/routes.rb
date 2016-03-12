@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
   end
 
+  # PZ - are these triple nested resources?
+
   # resources :beers do
   #   resources :drinklists
   #   resources :comments
